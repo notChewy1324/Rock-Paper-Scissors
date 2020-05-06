@@ -25,9 +25,53 @@ const game = () => {
             option.addEventListener('click', function(){
                 // Computer choice
                 const computerNumber = Math.floor(Math.random() * 3);
-                const computerChoise = computerOptions[computerNumber];
+                const computerChoice = computerOptions[computerNumber];
             });
         });
+    }
+
+    const compareHands = (plaerChoice, computerChoice) => {
+        // Update text
+        const winner = document.querySelector('.winner');
+
+        // Check for tie
+        if(playerChoice === computerChoice){
+            winner.textContent = "It is a tie!";
+            return;
+        }
+
+        // Check for rock
+        if(playerChoice === 'rock'){
+            if(computerChoice === 'scissors'){
+                winner.textContent = "Player Wins!";
+                return;
+            } else {
+                winner.textContent = "Computer Wins!";
+                return;
+            }
+        }
+
+        // Check for paper
+        if(playerChoice === 'paper'){
+            if(computerChoice === 'rock'){
+                winner.textContent = "Player Wins!";
+                return;
+            } else {
+                winner.textContent = "Computer Wins!";
+                return;
+            }
+        }
+
+        // Check for scissors
+        if(playerChoice === 'scissors'){
+            if(computerChoice === 'paper'){
+                winner.textContent = "Player Wins!";
+                return;
+            } else {
+                winner.textContent = "Computer Wins!";
+                return;
+            }
+        }
     }
 
     // Calls all inner functions
