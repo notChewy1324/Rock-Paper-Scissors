@@ -35,7 +35,14 @@ const game = () => {
         });
     }
 
-    const compareHands = (plaerChoice, computerChoice) => {
+    const updateScore = () => {
+        const playerScore_Count = document.querySelector('.player-score p');
+        const computerScore_Count = document.querySelector('.computer-score p');
+        playerScore_Count.textContent = playerScore;
+        computerScore_Count.textContent = computerScore;
+    }
+
+    const compareHands = (playerChoice, computerChoice) => {
         // Update text
         const winner = document.querySelector('.winner');
 
@@ -49,9 +56,13 @@ const game = () => {
         if(playerChoice === 'rock'){
             if(computerChoice === 'scissors'){
                 winner.textContent = "Player Wins!";
+                playerScore++;
+                updateScore();
                 return;
             } else {
                 winner.textContent = "Computer Wins!";
+                computerScore++;
+                updateScore();
                 return;
             }
         }
@@ -60,9 +71,13 @@ const game = () => {
         if(playerChoice === 'paper'){
             if(computerChoice === 'rock'){
                 winner.textContent = "Player Wins!";
+                playerScore++;
+                updateScore();
                 return;
             } else {
                 winner.textContent = "Computer Wins!";
+                computerScore++;
+                updateScore();
                 return;
             }
         }
@@ -71,9 +86,13 @@ const game = () => {
         if(playerChoice === 'scissors'){
             if(computerChoice === 'paper'){
                 winner.textContent = "Player Wins!";
+                playerScore++;
+                updateScore();
                 return;
             } else {
                 winner.textContent = "Computer Wins!";
+                computerScore++;
+                updateScore();
                 return;
             }
         }
