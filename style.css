@@ -45,7 +45,7 @@ section {
 .intro h1 {
     font-size: 50px;
 }
-.intro button {
+.intro button, .match button {
     width: 150px;
     height: 50px;
     background: none;
@@ -54,4 +54,26 @@ section {
     font-size: 20px;
     background-color: rgb(45, 117, 96);
     border-radius: 5px;
+}
+
+.match {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.winner {
+    color: var(--white_color);
+    text-align: center;
+    font-size: 50px;
+}
+
+.hands, .options {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.player-hand {
+    transform: rotateY(180deg);
 }
