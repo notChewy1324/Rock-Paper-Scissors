@@ -26,6 +26,11 @@ const game = () => {
                 // Computer choice
                 const computerNumber = Math.floor(Math.random() * 3);
                 const computerChoice = computerOptions[computerNumber];
+                // Compare hands
+                compareHands(this.textContent, computerChoice);
+                // Update images
+                playerHand.src = `./assets/${this.textContent}.png`;
+                computerHand.src = `./assets/${computerChoice}.png`;
             });
         });
     }
